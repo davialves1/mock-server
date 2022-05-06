@@ -15,7 +15,8 @@ app.use(cors());
 // })
 
 app.get("/", (req, res) => {
-  res.send(datasetLarge);
+  // res.send(datasetLarge);
+  res.send("App Running 🙏");
 });
 
 app.get("/test", (req, res) => {
