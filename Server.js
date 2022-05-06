@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.send(datasetLarge);
 });
 
-app.get("test", (req, res) => {
+app.get("/test", (req, res) => {
   res.send("App Running 🤩")
 })
 
