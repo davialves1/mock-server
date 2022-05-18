@@ -9,11 +9,15 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send(datasetLarge);
+  res.send("Backend working 🥳");
 });
 
 app.get("/test", (req, res) => {
   res.send("App Running 🤩")
+})
+
+app.get("/dataset", (req, res) => {
+  res.send(datasetLarge);
 })
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
