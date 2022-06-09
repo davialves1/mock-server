@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const dataset = require("./DataSet");
+const https = require("https");
+const fs = require("fs");
 const datasetLarge = require("./DataSetLarge");
 
 const port = 8080;
@@ -20,4 +21,11 @@ app.get("/dataset", (req, res) => {
   res.send(datasetLarge);
 })
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+const sslServer = https.createServer({
+  key: '',
+  cert: ''
+}, app)
+
+// sslServer.listen(3443, () => console.log(`Server listening on port ${port}`));
+
+app.listen(port, () => console.log(`Server listening on port ${port}`) )
